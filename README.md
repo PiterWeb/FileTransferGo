@@ -40,7 +40,7 @@ To see all commands run :
 
 **```$ go run .```** 
 
-or
+- - - -
 
 **```$ FileTransfer.exe```** (If u did the build)
 
