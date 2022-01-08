@@ -12,11 +12,14 @@
   
 ## How to use
 
-**```$ go run . <Commands>```** 
+
+1.Set account for ngrok **```$ ngrok authtoken <authtoken> ```** 
+
+2.Run CLI from Go **```$ go run . <Commands>```** 
 
 or
 
-**```$ FileTransfer.exe <Commands>```**  (If u did the build)
+2.Run CLI from .exe file **```$ FileTransfer.exe <Commands>```**  (If u did the build)
 
 ## Build
 
@@ -26,4 +29,9 @@ or
 
 To see all commands run :
 
-**```$ FileTransfer.exe ```** 
+**```$ go run .```** 
+
+or
+
+**```$ FileTransfer.exe```** (If u did the build)
+
