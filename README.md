@@ -1,5 +1,10 @@
 # FileTransferGo
 
+## Libraries used
+
+* Gin (*run http server*)
+* Cobra (*CLI commands*)
+
 ## Features 
 
 * Client 
