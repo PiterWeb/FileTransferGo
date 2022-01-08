@@ -21,3 +21,9 @@ or
 ## Build
 
 **```$ go build```** (on project directory)
+
+## Commands
+
+To see all commands run :
+
+**```$ FileTransfer.exe ```** 
