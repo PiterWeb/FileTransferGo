@@ -2,8 +2,11 @@
 
 ## Packages used :package:
 
-* Gin (*run http server*) :globe_with_meridians:
-* Cobra (*CLI commands*) :snake:
+* Go:
+  * Gin (*http server*) :globe_with_meridians:
+  * Cobra (*CLI command framework*) :snake:
+* External :
+  * Ngrok (*secure tunnels*) :lock:
 
 ## Features 
 
