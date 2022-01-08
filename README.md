@@ -1,36 +1,37 @@
 # FileTransferGo
 
-## Libraries used
+## Packages used :package:
 
-* Gin (*run http server*)
-* Cobra (*CLI commands*)
+* Gin (*run http server*) :globe_with_meridians:
+* Cobra (*CLI commands*) :snake:
 
 ## Features 
 
-* Client 
+* :bust_in_silhouette: Client
   * Send Files to another computer using command line
   
-* Server
+* :computer: Server
   * Listen for files from other computers across the internet using Ngrok secure tunnels
   
-* On every subcommand there is -h flag to show description of all commands
+*  :bookmark: On every subcommand there is -h flag to show description of all commands
   
-## How to use
+## :books: How to use
 
+*[Get yout Ngrok Authtoken](https://dashboard.ngrok.com/get-started/your-authtoken "Go to Ngrok")*
 
-1.Set account for ngrok **```$ ngrok authtoken <authtoken> ```** 
+1. Set authtoken if u haven't use ngrok **```$ ngrok authtoken <authtoken> ```**  (run it on project folder)
 
-2.Run CLI from Go **```$ go run . <Commands>```** 
+2. Run CLI from Go **```$ go run . <Commands>```** 
 
-or
+- - - -
 
-2.Run CLI from .exe file **```$ FileTransfer.exe <Commands>```**  (If u did the build)
+2. Run CLI from .exe file **```$ FileTransfer.exe <Commands>```**  (If u did the build)
 
-## Build
+## :construction_worker: Build
 
 **```$ go build```** (on project directory)
 
-## Commands
+## :ballot_box_with_check: Commands
 
 To see all commands run :
 
