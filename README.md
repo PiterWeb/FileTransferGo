@@ -34,7 +34,7 @@
 
 **```$ go build```** (on project directory)
 
-## :ballot_box_with_check: Commands
+## 💬 Commands
 
 To see all commands run :
 
