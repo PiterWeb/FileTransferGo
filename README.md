@@ -28,9 +28,23 @@
 
 - - - -
 
-2. Run CLI from .exe file **```$ FileTransfer.exe <Commands>```**  (If u did the build)
+### Windows
 
-## :construction_worker: Build
+2. Run CLI from file **```$ FileTransfer <Commands>```**  (If u did the build)
+
+### Linux
+
+2. Run CLI from file **```$ ./FileTransfer <Commands>```**  (If u did the build)
+
+## :construction_worker: Build for your OS
+
+### Linux 
+
+*[Get yout Ngrok Version](https://ngrok.com/download "Go to Ngrok")*
+
+#### **Change the Ngrok.exe with your respective ngrok version on the same path**
+
+- - - -
 
 **```$ go build```** (on project directory)
 
@@ -38,9 +52,18 @@
 
 To see all commands run :
 
-**```$ go run .```** 
+From Go **```$ go run .```** 
 
 - - - -
 
-**```$ FileTransfer.exe```** (If u did the build)
+### If u did the build:
+
+#### Windows
+
+**```$ FileTransfer```**
+
+#### Linux
+
+**```$ ./FileTransfer```**
+
 
