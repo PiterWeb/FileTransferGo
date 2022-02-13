@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"log"
 	"mime/multipart"
 	"net/http"
 	"os"
@@ -12,6 +11,7 @@ import (
 	"strings"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
+	"runtime"
 )
 
 var upload = &cobra.Command{
@@ -45,7 +45,8 @@ var upload = &cobra.Command{
 		fileData, err := os.Open(file)
 		if err != nil {
 
-			log.Fatal(err)
+			cmd.Println(err)
+			os.Exit(1)
 
 		}
 
@@ -66,11 +67,13 @@ var upload = &cobra.Command{
 		w , err := mw.CreateFormFile("file", fileName)
 
 		if err != nil {
-			log.Fatal(err)
+			cmd.Println(err)
+			os.Exit(1)
 		}
 
 		if _, err = io.Copy(w, fileData); err != nil {
-			log.Fatal(err)
+			cmd.Println(err)
+			os.Exit(1)
 		}
 
 		mw.Close()
@@ -78,7 +81,8 @@ var upload = &cobra.Command{
 		req, err := http.NewRequest("POST", url, body)
 
 		if err != nil {
-			log.Fatal(err)
+			cmd.Println(err)
+			os.Exit(1)
 		}
 
 		req.Header.Add("Content-Type", mw.FormDataContentType())
@@ -86,7 +90,8 @@ var upload = &cobra.Command{
 		res , err := http.DefaultClient.Do(req)
 
 		if err != nil {
-			log.Fatal(err)
+			cmd.Println(err)
+			os.Exit(1)
 		}
 
 		defer res.Body.Close()
@@ -138,13 +143,24 @@ var host = &cobra.Command{
 
 		go r.Run(":" + port)
 
-		exec.Command("rundll32", "url.dll,FileProtocolHandler", "http://127.0.0.1:4040").Start()
+		url := "127.0.0.1:4040"
+
+		switch runtime.GOOS {
+		case "windows":
+			exec.Command("rundll32", "url.dll,FileProtocolHandler", url).Start()
+		case "linux":
+			exec.Command("xdg-open", url).Start()
+		case "darwin":
+			exec.Command("open", url).Start()
+		default:
+			cmd.Println("Unsupported platform")	
+		}
 
 		e := exec.Command("ngrok", "http", port).Run()
 
 		if e != nil {
 
-			fmt.Println(e)
+			cmd.Println(err)
 			os.Exit(1)
 
 		}
@@ -170,7 +186,7 @@ func main() {
 	host.Flags().StringP("src", "s", initialPath, "Source directory to upload files")
 	host.Flags().StringP("port", "p", "8080", "Port to serve")
 
-	var ftgoCmd = &cobra.Command{Use: "ftgo"}
+	var ftgoCmd = &cobra.Command{Use: "FileTransfer"}
 	ftgoCmd.AddCommand(host)
 	ftgoCmd.AddCommand(upload)
 
