@@ -2,25 +2,25 @@
 
 <img src="resources/icon.png" width="200px" height="200px">
 
-## Packages used :package:
+## Packages used 📦
 
 * Go:
-  * Gin (*http server*) :globe_with_meridians:
-  * Cobra (*CLI command framework*) :snake:
+  * Gin (*http server*) 🌐
+  * Cobra (*CLI command framework*) 🐍
 * External :
-  * Ngrok (*secure tunnels*) :lock:
+  * Ngrok (*secure tunnels*) 🔒
 
 ## Features 
 
-* :bust_in_silhouette: Client
+* 👥 Client
   * Send Files to another computer using command line
   
-* :computer: Server
+* 💻 Server
   * Listen for files from other computers across the internet using Ngrok secure tunnels
   
-*  :bookmark: On every subcommand there is -h flag to show description of all commands
+*  🔖 On every subcommand there is -h flag to show description of all commands
   
-## :books: How to use
+## 📚 How to use
 
 *[Get yout Ngrok Authtoken](https://dashboard.ngrok.com/get-started/your-authtoken "Go to Ngrok")*
 
@@ -38,7 +38,7 @@
 
 2. Run CLI from file **```$ ./FileTransfer <Commands>```**  (If u did the build)
 
-## :construction_worker: Build for your OS
+## 👷‍♂️ Build for your OS
 
 ### Linux 
 
